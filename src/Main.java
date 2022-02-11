@@ -14,8 +14,11 @@ public class Main {
 
         //Hiện thông tin tổng
         int totalQuantity = getSumQuantity(bks);
-        System.out.println("Tổng khối lượng của sách hiện có: ");
+        System.out.println("Tổng số lượng của sách hiện có: ");
         System.out.println(totalQuantity + " cuốn");
+        int totalWeight = getSumWeight(bks);
+        System.out.println("Tổng khối lượng của sách hiện có: ");
+        System.out.println(totalWeight + "kg");
         int totalPrice = getSumPrice(bks);
         System.out.println("Tổng số tiền để mua hết sách: ");
         System.out.println(totalPrice + "JPY");
@@ -50,11 +53,20 @@ public class Main {
         }while (!search.equals("Exit"));
     }
 
-    //Phương thức tính tổng số sách trong
+    //Phương thức tính tổng số sách
     public static int getSumQuantity(Book[] b){
-        int sum =0;
+        int sum = 0;
         for (int i = 0; i < b.length; i++){
             sum += b[i].getQuantity();
+        }
+        return sum;
+    }
+
+    //Phương thức tính tổng khối lượng số sách
+    public static int getSumWeight(Book[] b){
+        int sum = 0;
+        for (int i = 0; i < b.length; i++){
+            sum += b[i].getQuantity() * b[i].getWeight();
         }
         return sum;
     }
