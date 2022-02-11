@@ -9,31 +9,30 @@ public class Main {
         Book b3 = new Book("Epic Seven","Smilegate",3,25000,25);
         Book b4 = new Book("Fate Grand Order","Aniplex",4,16000,16);
         Book b5 = new Book("Punishing Gray Raven","Kuro Technology",5,7000,7);
-        Book[] bks = {b1,b2,b3,b4,b5};
-        String[] bookname = {b1.name,b2.name,b3.name,b4.name,b5.name};
+        Book[] Books = {b1,b2,b3,b4,b5};
+        String[] Name = {b1.name,b2.name,b3.name,b4.name,b5.name};
 
         //Hiện thông tin tổng
-        int totalQuantity = getSumQuantity(bks);
+        int totalQuantity = getSumQuantity(Books);
         System.out.println("Tổng số lượng của sách hiện có: ");
         System.out.println(totalQuantity + " cuốn");
-        int totalWeight = getSumWeight(bks);
+        int totalWeight = getSumWeight(Books);
         System.out.println("Tổng khối lượng của sách hiện có: ");
         System.out.println(totalWeight + "kg");
-        int totalPrice = getSumPrice(bks);
+        int totalPrice = getSumPrice(Books);
         System.out.println("Tổng số tiền để mua hết sách: ");
         System.out.println(totalPrice + "JPY");
 
         //Lấy thông tin người dùng nhập
         String search;
         System.out.println("Nhập tên cuốn sách bạn đang tìm");
-        System.out.println("Gõ Exit để thoát khỏi chương trình");
         do {
             search = sc.nextLine();
 
             //Kiểm tra xem sách nhập vào có tồn tại trong thư viện không
             boolean check = false;
-            for (int i = 0; i < bookname.length; i++){
-                if (search.equals(bookname[i])){
+            for (int i = 0; i < Name.length; i++){
+                if (search.equals(Name[i])){
                     check = true;
                     break;
                 }
@@ -41,15 +40,17 @@ public class Main {
 
             //Tìm thông tin nếu tên sách nhập vào có tồn tại
             if (check) {
-                for (int i = 0; i < bookname.length; i++) {
-                    if (search.equals(bookname[i])) {
-                        System.out.println(bks[i].toString());
-                        System.out.println("Bạn có muốn tìm thêm cuốn sách nào không?");
+                for (int i = 0; i < Name.length; i++) {
+                    if (search.equals(Name[i])) {
+                        System.out.println(Books[i].toString());
+                        System.out.print("Bạn có muốn tìm thêm cuốn sách nào không?");
                         break;
                     }
                 }
-            } else
+            } else {
                 System.out.println("Bạn có nhập sai tên sách đang tìm không?");
+                System.out.println("Nếu không, gõ 'Exit' để thoát khỏi chương trình");
+            }
         }while (!search.equals("Exit"));
     }
 
@@ -79,5 +80,4 @@ public class Main {
         }
         return sum;
     }
-
 }
