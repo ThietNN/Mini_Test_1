@@ -6,8 +6,8 @@ public class Main {
         //Tạo đối tượng thuộc lớp Book
         Book b1 = new Book("Arknights","Yostar",1,27000,2.7);
         Book b2 = new Book("Revived Witch","Yostar",2,12000,1.2);
-        Book b3 = new Book("Epic Seven","Smilegate",3,25000,25);
-        Book b4 = new Book("Fate Grand Order","Aniplex",4,16000,16);
+        Book b3 = new Book("Epic Seven","Smilegate",3,25000,2.5);
+        Book b4 = new Book("Fate Grand Order","Aniplex",4,16000,1.6);
         Book b5 = new Book("Punishing Gray Raven","Kuro Technology",5,7000,7);
         Book[] Books = {b1,b2,b3,b4,b5};
         String[] Name = {b1.name,b2.name,b3.name,b4.name,b5.name};
@@ -16,7 +16,7 @@ public class Main {
         int totalQuantity = getSumQuantity(Books);
         System.out.println("Tổng số lượng của sách hiện có: ");
         System.out.println(totalQuantity + " cuốn");
-        int totalWeight = getSumWeight(Books);
+        double totalWeight = getSumWeight(Books);
         System.out.println("Tổng khối lượng của sách hiện có: ");
         System.out.println(totalWeight + "kg");
         int totalPrice = getSumPrice(Books);
@@ -64,7 +64,7 @@ public class Main {
     }
 
     //Phương thức tính tổng khối lượng số sách
-    public static int getSumWeight(Book[] b){
+    public static double getSumWeight(Book[] b){
         int sum = 0;
         for (int i = 0; i < b.length; i++){
             sum += b[i].getQuantity() * b[i].getWeight();
