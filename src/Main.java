@@ -4,11 +4,11 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         //Tạo đối tượng thuộc lớp Book
-        Book b1 = new Book("Arknights","Yostar",27000,2.7,1);
-        Book b2 = new Book("Revived Witch","Yostar",12000,1.2,2);
-        Book b3 = new Book("Epic Seven","Smilegate",25000,25,3);
-        Book b4 = new Book("Fate Grand Order","Aniplex",16000,16,4);
-        Book b5 = new Book("Punishing Gray Raven","Kuro Technology",7000,7,5);
+        Book b1 = new Book("Arknights","Yostar",1,27000,2.7);
+        Book b2 = new Book("Revived Witch","Yostar",2,12000,1.2);
+        Book b3 = new Book("Epic Seven","Smilegate",3,25000,25);
+        Book b4 = new Book("Fate Grand Order","Aniplex",4,16000,16);
+        Book b5 = new Book("Punishing Gray Raven","Kuro Technology",5,7000,7);
         Book[] bks = {b1,b2,b3,b4,b5};
         String[] bookname = {b1.name,b2.name,b3.name,b4.name,b5.name};
 
