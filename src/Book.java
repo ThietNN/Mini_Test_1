@@ -8,7 +8,6 @@ public class Book {
 
     //Constructor
     public Book(){
-        quantity++;
     }
     public Book(String name, String author, int quantity, int price, double weight){
         this.name = name;
